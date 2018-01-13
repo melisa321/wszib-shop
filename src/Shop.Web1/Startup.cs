@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Shop.Web1.Framework;
 
-namespace Shop.Web
+namespace Shop.Web1
 {
     public class Startup
     {
@@ -38,7 +39,7 @@ namespace Shop.Web
             }
 
             app.UseStaticFiles();
-
+            app.UseMiddleware<MyMiddleware>();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
